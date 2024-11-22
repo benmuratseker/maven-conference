@@ -8,10 +8,19 @@ import java.util.List;
 
 public class SpeakerService implements ISpeakerService {
 
-    private ISpeakerRepository speakerRepository = new SpeakerRepository();
+    private ISpeakerRepository speakerRepository;
+
+    public SpeakerService(ISpeakerRepository speakerRepository) {
+        this.speakerRepository = speakerRepository;
+    }
+
 
     @Override
     public List<Speaker> findAll() {
         return speakerRepository.findAll();
+    }
+
+    public void setSpeakerRepository(ISpeakerRepository speakerRepository) {
+        this.speakerRepository = speakerRepository;
     }
 }
