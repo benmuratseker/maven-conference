@@ -4,13 +4,16 @@ import net.experiencein.service.ISpeakerService;
 import net.experiencein.service.SpeakerService;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
 
 @Configuration//this class will be used for configuration purposes -> class level
+@ComponentScan({"net.experiencein"})//array of packages to scan
 public class AppConfig {
 
+    /*
     @Bean(name = "speakerService") // beans -> method level
     //@Scope(value = BeanDefinition.SCOPE_SINGLETON)
     @Scope(value = BeanDefinition.SCOPE_PROTOTYPE)//
@@ -22,8 +25,11 @@ public class AppConfig {
         return service;
     }
 
+
     @Bean(name = "speakerRepository")
     public ISpeakerRepository getSpeakerRepository() {
         return new SpeakerRepository();
     }
+    */
+
 }
