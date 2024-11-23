@@ -1,7 +1,7 @@
 import net.experiencein.model.Speaker;
 import net.experiencein.service.SpeakerService;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.List;
 
@@ -9,15 +9,10 @@ import java.util.List;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //SpeakerService service = new SpeakerService();
-        ApplicationContext appContext = new AnnotationConfigApplicationContext(AppConfig.class);
-        SpeakerService service = appContext.getBean("speakerService", SpeakerService.class);
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
 
+        SpeakerService service = applicationContext.getBean("speakerService", SpeakerService.class);
         List<Speaker> result = service.findAll();
         System.out.println(result.get(0).getFirstName() + " " + result.get(0).getLastName());
-        //System.out.println(service);
-
-        //SpeakerService service2 = appContext.getBean("speakerService", SpeakerService.class);
-        //System.out.println(service2);
     }
 }
