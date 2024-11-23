@@ -11,7 +11,11 @@
         <property name="speakerRepository" ref="speakerRepository" /> -->
 
     <!-- index 0 means constructor with 1 argument -->
-    <bean name="speakerService" class="net.experiencein.service.SpeakerService">
-        <constructor-arg index="0" ref="speakerRepository" />
+<!--    <bean name="speakerService" class="net.experiencein.service.SpeakerService">-->
+<!--        <constructor-arg index="0" ref="speakerRepository" />-->
+<!--    </bean>-->
+    <bean name="speakerService" class="net.experiencein.service.SpeakerService" autowire="constructor">
+<!--        autowire can be constructor-byType or byName-->
     </bean>
+
 </beans>
