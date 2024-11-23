@@ -16,7 +16,8 @@ public class AppConfig {
     @Scope(value = BeanDefinition.SCOPE_PROTOTYPE)//
     //@Scope("singleton")
     public ISpeakerService getCSpeakerService() {
-        SpeakerService service = new SpeakerService(getSpeakerRepository());
+        //SpeakerService service = new SpeakerService(getSpeakerRepository());
+        SpeakerService service = new SpeakerService();
         //service.setSpeakerRepository(getSpeakerRepository());
         return service;
     }

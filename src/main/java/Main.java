@@ -15,9 +15,9 @@ public class Main {
 
         List<Speaker> result = service.findAll();
         System.out.println(result.get(0).getFirstName() + " " + result.get(0).getLastName());
-        System.out.println(service);
+        //System.out.println(service);
 
-        SpeakerService service2 = appContext.getBean("speakerService", SpeakerService.class);
-        System.out.println(service2);
+        //SpeakerService service2 = appContext.getBean("speakerService", SpeakerService.class);
+        //System.out.println(service2);
     }
 }
