@@ -1,7 +1,6 @@
 import net.experiencein.model.Speaker;
 import net.experiencein.service.SpeakerService;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.List;
